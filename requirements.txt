@@ -1,3 +1,5 @@
-fastapi
+fastapi~=0.115.11
 uvicorn[standard]
 email-validator
+pydantic~=2.10.6
+fpdf~=1.7.2
