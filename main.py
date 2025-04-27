@@ -22,21 +22,15 @@ GMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")  # Use App Password if 2FA is on
 
 
 def convert_body_to_pdf(body: str) -> bytes:
-    """
-    Convert the email body into a PDF and return as bytes.
-    """
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
-    # Add body content (handling multi-line)
     for line in body.splitlines():
         pdf.multi_cell(0, 10, line)
 
-    # Save PDF to a BytesIO object
-    pdf_bytes = BytesIO()
-    pdf.output(pdf_bytes)
-    pdf_bytes.seek(0)
-    return pdf_bytes.read()
+    pdf_bytes = pdf.output(dest='S')
+    return pdf_bytes
+
 
 
 @app.post("/send-email")
