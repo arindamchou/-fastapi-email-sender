@@ -1,5 +1,4 @@
-fastapi~=0.115.11
-uvicorn[standard]
-email-validator
-pydantic~=2.10.6
-fpdf~=1.7.2
+fastapi==0.110.2
+uvicorn==0.29.0
+fpdf2==2.7.8
+python-multipart==0.0.9
